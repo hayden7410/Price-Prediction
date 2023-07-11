@@ -1,10 +1,20 @@
+import os
 import pandas as pd
 from sklearn.impute import SimpleImputer
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-train_full = pd.read_csv('C:\\Users\\Admin\\Desktop\\Data Analysis\\house-prices-advanced-regression-techniques\\train.csv',index_col = ['Id'])
-test = pd.read_csv('C:\\Users\\Admin\\Desktop\\Data Analysis\\house-prices-advanced-regression-techniques\\test.csv',index_col = ['Id'])
+folder_path = os.path.dirname(os.path.abspath(__file__))
+
+# Get the filenames of the train and test data files
+train_file = "train.csv"
+test_file = "test.csv"
+
+# Construct the full file paths
+train_file_path = os.path.join(folder_path, train_file)
+test_file_path = os.path.join(folder_path, test_file)
+train_full = pd.read_csv(train_file_path,index_col = ['Id'])
+test = pd.read_csv(test_file_path,index_col = ['Id'])
 pd.set_option('display.max_columns',None)
 # pd.set_option('display.max_rows',None)
 # Filtering Data:
