@@ -119,13 +119,9 @@ from sklearn.metrics import mean_absolute_error
 preds = my_model.predict(X_test)
 mae = mean_absolute_error(y,preds)
 preds = pd.Series(preds)
+print("Predictions:")
 print(preds)
 print("Mean Absolute Error using XGBRegressor: ",mae)
-
-
-
-
-
 
 
 
